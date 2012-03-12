@@ -4,6 +4,7 @@ gatos is an atos-like tool for Mach-O/DWARF address symbolification.
 
 It is distributed under the BSD licence.
 
+
 Usage
 -----
     gatos --raddr=xxx --laddr=xxxx --macho=xxx --dsym=xxx
@@ -11,7 +12,6 @@ Usage
 
 Example
 -----
-
     Thread 0 Crashed:
     0   AppName                  0x000043cc 0x1000 + 13260
                                  ^          ^
@@ -23,8 +23,10 @@ Example
     $ gatos --raddr=0x000043cc --laddr=0x1000 --macho=appname --dsym=appname.dsym
     -[CPrefsViewController pickImage:] (CPrefsViewController.mm:332)
 
+
 Notes
 -----
 * Input files are found inside app/.dSYM bundles.
 * Does not support fat binaries; lipo -thin the app/dsym before processing.
-* Does not support DWARF line table; line numbers are to function, not address.
+* Does not support DWARF line table; line numbers are to the function, not address.
+
